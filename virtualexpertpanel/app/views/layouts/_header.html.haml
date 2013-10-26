@@ -1,0 +1,20 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    = link_to "VEP", root_url, class: "brand"
+    - if user_signed_in? 
+      %ul.nav
+        %li
+          = link_to "Submit Case", new_patient_path
+        %li
+          = link_to "Review Case", patients_path
+        %li
+          = link_to "Results", root_url
+      %ul.nav.pull-right
+        %li
+          = link_to "Log Out", destroy_user_session_path, method: :delete
+    - else
+      %ul.nav.pull-right
+        %li
+          = link_to "Log In", new_user_session_path
+        %li
+          = link_to "Sign Up", new_user_registration_path

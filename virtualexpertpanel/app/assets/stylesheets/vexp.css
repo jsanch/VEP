@@ -1,6 +1,7 @@
  body {
    padding-left: 0;
    padding-right: 0;
+   padding-top: 60px;
  }
  .navbar {
    height: 60px;
@@ -35,7 +36,7 @@
    padding: 60px 20px 60px 20px;
  }
  .container-fluid.container-fluid-3 {
-   background: #000000 url(../images/source.jpg) no-repeat 0px 0px;
+   background: #000000 url(source.jpg) no-repeat 0px 0px;
    background-size: cover;
  }
  .container-fluid-3 .container {
@@ -182,4 +183,10 @@
  .container-fluid-6 .container .row-fluid .span12 .nav li a {
    text-align: center;
    color: #cccccc;
+ }
+
+ .customarea {
+   min-width: 100%;
+   max-width: 100%;
+   height: 100px;
  }

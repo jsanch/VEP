@@ -1,0 +1,113 @@
+.paddedcontent
+  = form_for @patient do |f|
+    %fieldset
+      %legend Patient Information
+      .row-fluid
+        .span4
+          %div
+            = "Patient's Full Name:"
+          = f.text_field :first_name, placeholder: "First Name", class: "input-small floatleft"
+          = f.text_field :middle_initial, placeholder: "M", :maxlength => 1, :allow_blank => true, class: "input-mini floatleft" 
+          = f.text_field :last_name, placeholder: "Last Name", class: "input-small floatleft"
+        .span4
+          %div
+            = "Patient's Date of Birth:"
+          %input{type: "date", name: "date_of_birth"}
+        .span4
+          %div
+            = "Patient's Gender"
+          %input#btn-input{name: "gender`", type: "hidden", value: ""}
+          .btn-group{"data-toggle" => "buttons-radio"}
+            %button#btn-one.btn{"data-toggle" => "button", name: "option", type: "button", value: "Male"} Male
+            %button#btn-two.btn{"data-toggle" => "button", name: "option", type: "button", value: "Female"} Female
+    %br/
+    %br/
+    %fieldset
+      %legend Staff Information
+      .row-fluid
+        .span4
+          %div
+            = "Attending Doctor's Full Name:"
+          = f.text_field :doctor_first_name, placeholder: "First Name", class: "input-small floatleft"
+          = f.text_field :doctor_middle_initial, placeholder: "M", :maxlength => 1, :allow_blank => true, class: "input-mini floatleft" 
+          = f.text_field :doctor_last_name, placeholder: "Last Name", class: "input-small floatleft"
+        .span4
+          %div
+            = "Requester's Full Name:"
+          = f.text_field :requester_first_name, placeholder: "First Name", class: "input-small floatleft"
+          = f.text_field :requester_middle_initial, placeholder: "M", :maxlength => 1, :allow_blank => true, class: "input-mini floatleft" 
+          = f.text_field :requester_last_name, placeholder: "Last Name", class: "input-small floatleft"
+        .span4
+          %div
+            = "Date of Admission"
+          %input{type: "date", name: "date_of_admission"}
+      .row-fluid
+        .span4
+          %div
+            = "Unit Number"
+          = f.number_field :unit_number
+        .span4
+        .span4
+    %br/
+    %br/
+    %fieldset
+      %legend Condition Summary
+      .row-fluid
+        .span12
+          = f.text_area :condition_summary, class: "customarea"
+    %br/
+    %br/
+    %fieldset
+      %legend Key Signs and Symptoms
+      .row-fluid
+        .span4
+          %div
+            = "Key Sign 1"
+          = f.text_field :key_sign_1
+        .span4
+          %div
+            = "Key Sign 2"
+          = f.text_field :key_sign_2
+        .span4
+          %div
+            = "Key Sign 3"
+          = f.text_field :key_sign_3
+      .row-fluid
+        .span4
+          %div
+            = "Key Symptom 1"
+          = f.text_field :key_symptom_1
+        .span4
+          %div
+            = "Key Symptom 2"
+          = f.text_field :key_symptom_2
+        .span4
+          %div
+            = "Key Symptom 3"
+          = f.text_field :key_symptom_3
+    %br/
+    %br/
+    %fieldset
+      %legend Possible Diagnostic and Managment Approaches
+      .row-fluid
+        .span6
+          %div
+            = "Possible Diagnoses"
+          = f.text_field :diagnosis_1
+          = f.text_field :diagnosis_2
+          = f.text_field :diagnosis_3
+          = f.text_field :diagnosis_4
+          = f.text_field :diagnosis_5
+        .span6
+          %div
+            = "Treatment Options"
+          = f.text_field :treatment_1
+          = f.text_field :treatment_2
+          = f.text_field :treatment_3
+          = f.text_field :treatment_4
+          = f.text_field :treatment_5
+    %br/
+    %br/
+    %br/
+    %br/
+    = f.submit "Submit Case", class: "btn btn-success btn-large"
