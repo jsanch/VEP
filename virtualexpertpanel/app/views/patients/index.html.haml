@@ -14,8 +14,8 @@
           - @patients.each do |patient|
             %tr
               %td
-                = "#{patient.first_name} #{patient.middle_initial}. #{patient.last_name}"
+                = "#{patient.first_name} #{patient.middle_initial} #{patient.last_name}"
               %td
                 = patient.unit_number
               %td
-                = link_to "Review Case", new_review_path
+                = link_to "Review Case", "http://virtualexpertpanel.com/reviewCase.php?casetoreview=123456"
